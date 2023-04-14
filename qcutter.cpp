@@ -240,7 +240,7 @@ int QCutter::decodePacket(AVPacket *pPacket, AVCodecContext *codecContext, AVFra
 
             // To create the PNG files, the AVFrame data must be translated from YUV420P format into RGB24
             struct SwsContext *swsContext = sws_getContext(
-                frame->width, frame->height, AV_PIX_FMT_YUV420P /*pFrame->format*/,
+                frame->width, frame->height, AV_PIX_FMT_YUV420P,
                 frame->width, frame->height, AV_PIX_FMT_RGB24,
                 SWS_BILINEAR, nullptr, nullptr, nullptr);
 
